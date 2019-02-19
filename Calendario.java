@@ -185,6 +185,11 @@ public class Calendario {
     return a;
   }
   
+  /**
+   * Esto verifica si la fecha introducida es correcta.
+   * 
+   * @return Calendar
+   */
   public static Calendar Verifica() {
       Scanner s = new Scanner(System.in);
       SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");

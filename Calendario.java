@@ -35,7 +35,7 @@ public class Calendario {
     // Inicializamos las variables.
     int selector;                           // Variable entera que hace de selector del menu de eleccion.
     int diasSumRes;                         // Variable entera que suma o restat los dias a la fecha segum toque.
-    String Fecha = "", Verifica;
+    String Fecha = "";
     
     do {
       menu();

@@ -22,11 +22,6 @@ import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Calendario {
-  /**
-   * Este es el metodo main.
-   * 
-   * @param args
-   */
   public static void main(String[] args) {
     Scanner s = new Scanner(System.in);
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); // El formato con el que se mostrara la fecha.
@@ -35,7 +30,7 @@ public class Calendario {
     // Inicializamos las variables.
     int selector;                           // Variable entera que hace de selector del menu de eleccion.
     int diasSumRes;                         // Variable entera que suma o restat los dias a la fecha segum toque.
-    String Fecha = "";
+    String fecha = "";
     
     do {
       menu();
@@ -44,11 +39,11 @@ public class Calendario {
       
       switch (selector) {
       case 1:                 // Opcion de Introduccion de fecha.
-        a = Verifica();
-        Fecha = sdf.format(a.getTime());
+        a = validar_fecha();
+        fecha = sdf.format(a.getTime());
         break;
       case 2:
-        if (Fecha == "") {
+        if (fecha == "") {
           System.out.println("No hay Fecha");
         }else {
           // Suma dias a la fecha guardada
@@ -59,7 +54,7 @@ public class Calendario {
         }
         break;
       case 3:
-        if (Fecha == "") {
+        if (fecha == "") {
           System.out.println("No hay Fecha");
         }else {
             //Resta dias a la fecha guardada. 
@@ -70,11 +65,11 @@ public class Calendario {
         }
         break;
       case 4:
-        if (Fecha == "") {
+        if (fecha == "") {
           System.out.println("No hay Fecha");
         }else {
           System.out.println("Comparamos dos fechas: La guardada y la introducida.");
-          a2 = Verifica();
+          a2 = validar_fecha();
           
           // Imprime por pantalla segun sea la fecha menor o mayor.
           if (a.compareTo(a2)>0){
@@ -85,7 +80,7 @@ public class Calendario {
         }
         break;
       case 5:
-        if (Fecha == "") {
+        if (fecha == "") {
           System.out.println("No hay Fecha");
         }else {
           System.out.println("La fecha guardada es:" + sdf.format(a.getTime()));
@@ -190,7 +185,7 @@ public class Calendario {
    * 
    * @return Calendar
    */
-  public static Calendar Verifica() {
+  public static Calendar validar_fecha() {
       Scanner s = new Scanner(System.in);
       SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
       Calendar a = GregorianCalendar.getInstance();
